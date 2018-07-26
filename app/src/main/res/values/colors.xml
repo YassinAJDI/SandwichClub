@@ -3,4 +3,30 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--text colors-->
+    <color name="text_black_54">#8a000000</color>
+    <color name="text_black_87">#de000000</color>
+
+    <!--card-->
+    <color name="card_text">#ff212121</color>
+    <color name="card_title_text">@color/text_black_87</color>
+    <color name="card_publisher_text">@color/text_black_87</color>
+    <color name="card_time_text">@color/md_grey_600</color>
+    <color name="caption_text">@color/text_black_54</color>
+
+
+    <!--grey-->
+    <color name="md_grey_50">#FAFAFA</color>
+    <color name="md_grey_100">#F5F5F5</color>
+    <color name="md_grey_200">#EEEEEE</color>
+    <color name="md_grey_300">#E0E0E0</color>
+    <color name="md_grey_400">#BDBDBD</color>
+    <color name="md_grey_500">#9E9E9E</color>
+    <color name="md_grey_600">#757575</color>
+    <color name="md_grey_700">#616161</color>
+    <color name="md_grey_800">#424242</color>
+    <color name="md_grey_900">#212121</color>
+    <color name="md_black_1000">#000000</color>
+    <color name="md_white_1000">#ffffff</color>
 </resources>

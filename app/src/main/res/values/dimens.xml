@@ -2,4 +2,9 @@
 <resources>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--Card list article -->
+    <dimen name="card_outer_padding">8dp</dimen>
+    <dimen name="card_inner_padding">@dimen/activity_horizontal_margin</dimen>
+    <dimen name="card_title_text_size">16sp</dimen>
 </resources>
