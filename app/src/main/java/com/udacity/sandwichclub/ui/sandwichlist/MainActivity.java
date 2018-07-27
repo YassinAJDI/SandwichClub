@@ -3,6 +3,8 @@ package com.udacity.sandwichclub.ui.sandwichlist;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,8 +13,13 @@ import android.widget.ListView;
 
 import com.udacity.sandwichclub.DetailActivity;
 import com.udacity.sandwichclub.R;
+import com.udacity.sandwichclub.model.Sandwich;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    private SandwichAdapter mSandwichAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +46,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupListAdapter() {
+        RecyclerView recyclerView = findViewById(R.id.recycler_note_list);
 
+        recyclerView.setLayoutManager(new LinearLayoutManager(
+                this, LinearLayoutManager.VERTICAL, false));
+
+        mSandwichAdapter = new SandwichAdapter(
+                this,
+                new ArrayList<Sandwich>(0)
+        );
+        recyclerView.setAdapter(mSandwichAdapter);
     }
 
     private void setupToolbar() {
