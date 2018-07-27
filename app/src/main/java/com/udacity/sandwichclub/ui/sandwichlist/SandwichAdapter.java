@@ -3,6 +3,7 @@ package com.udacity.sandwichclub.ui.sandwichlist;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.udacity.sandwichclub.databinding.ItemSandwichBinding;
@@ -27,7 +28,12 @@ public class SandwichAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        // Inflate
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        // Create the binding
+        ItemSandwichBinding binding =
+                ItemSandwichBinding.inflate(layoutInflater, parent, false);
+        return new SandwichViewHolder(binding);
     }
 
     @Override
