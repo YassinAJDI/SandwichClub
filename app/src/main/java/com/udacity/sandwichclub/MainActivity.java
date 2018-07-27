@@ -20,14 +20,14 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, sandwiches);
 
         // Simplification: Using a ListView instead of a RecyclerView
-        ListView listView = findViewById(R.id.sandwiches_listview);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                launchDetailActivity(position);
-            }
-        });
+//        ListView listView = findViewById(R.id.sandwiches_listview);
+//        listView.setAdapter(adapter);
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+//                launchDetailActivity(position);
+//            }
+//        });
     }
 
     private void launchDetailActivity(int position) {
