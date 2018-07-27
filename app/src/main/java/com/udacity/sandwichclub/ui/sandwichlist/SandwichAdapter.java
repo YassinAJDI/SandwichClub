@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
+import com.udacity.sandwichclub.databinding.ItemSandwichBinding;
 import com.udacity.sandwichclub.model.Sandwich;
 
 import java.util.List;
@@ -42,6 +43,21 @@ public class SandwichAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private void replaceData(List<Sandwich> sandwiches) {
         mSandwichList = sandwiches;
         notifyDataSetChanged();
+    }
+
+    /**
+     * The {@link SandwichViewHolder} class.
+     * Provides a binding reference to each view in sandwich cardView.
+     */
+    public class SandwichViewHolder extends RecyclerView.ViewHolder {
+
+        private final ItemSandwichBinding binding;
+
+        public SandwichViewHolder(final ItemSandwichBinding binding) {
+            super(binding.getRoot());
+
+            this.binding = binding;
+        }
     }
 
 }
