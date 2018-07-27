@@ -1,4 +1,4 @@
-package com.udacity.sandwichclub;
+package com.udacity.sandwichclub.ui.sandwichlist;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.udacity.sandwichclub.DetailActivity;
+import com.udacity.sandwichclub.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
         setupToolbar();
+
+        setupListAdapter();
+    }
+
+    private void setupListAdapter() {
+
     }
 
     private void setupToolbar() {
@@ -38,10 +47,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-    }
-
-    private void setupAdapter() {
 
     }
 
