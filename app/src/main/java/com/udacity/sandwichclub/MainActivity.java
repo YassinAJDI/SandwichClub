@@ -28,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
 //                launchDetailActivity(position);
 //            }
 //        });
+
+        setupAdapter();
+    }
+
+    private void setupAdapter() {
+
     }
 
     private void launchDetailActivity(int position) {
