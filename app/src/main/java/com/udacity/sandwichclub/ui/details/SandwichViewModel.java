@@ -35,6 +35,7 @@ public class SandwichViewModel extends AndroidViewModel {
     }
 
     public void setCurrentPosition(final int position) {
+        // TODO: 28/07/2018 move inside constructor and use factory
         // parse json array on background thread
         mExecutors.diskIO().execute(new Runnable() {
             @Override
