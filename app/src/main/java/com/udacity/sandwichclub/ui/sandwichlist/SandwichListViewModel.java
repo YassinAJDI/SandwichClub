@@ -34,7 +34,7 @@ public class SandwichListViewModel extends AndroidViewModel {
 
     public SandwichListViewModel(@NonNull Application application) {
         super(application);
-        Timber.d("Create viewModel");
+        Timber.d("Creating viewModel");
 
         mContext = application.getApplicationContext();
 
