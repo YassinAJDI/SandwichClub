@@ -24,8 +24,6 @@ public class DetailActivity extends AppCompatActivity {
 
     private ActivityDetailBinding mBinding;
 
-    private SandwichViewModel mViewModel;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +41,9 @@ public class DetailActivity extends AppCompatActivity {
             return;
         }
 
-//        setupToolbar();
+        setupToolbar();
 
-        mViewModel = obtainViewModel(this);
+        SandwichViewModel mViewModel = obtainViewModel(this);
 
         mViewModel.setCurrentPosition(position);
 
@@ -91,5 +89,6 @@ public class DetailActivity extends AppCompatActivity {
         // sandwich origin
         mBinding.originTv.setText(sandwich.getPlaceOfOrigin());
 
+        mBinding.executePendingBindings();
     }
 }
