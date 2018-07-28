@@ -92,4 +92,10 @@ public class DetailActivity extends AppCompatActivity {
 
         mBinding.executePendingBindings();
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
 }
