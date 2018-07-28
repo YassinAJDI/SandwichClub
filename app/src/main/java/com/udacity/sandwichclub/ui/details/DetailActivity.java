@@ -43,7 +43,7 @@ public class DetailActivity extends AppCompatActivity {
             return;
         }
 
-        setupToolbar();
+//        setupToolbar();
 
         mViewModel = obtainViewModel(this);
 

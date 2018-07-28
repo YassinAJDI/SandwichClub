@@ -30,20 +30,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String[] sandwiches = getResources().getStringArray(R.array.sandwich_names);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, sandwiches);
-
-        // Simplification: Using a ListView instead of a RecyclerView
-//        ListView listView = findViewById(R.id.sandwiches_listview);
-//        listView.setAdapter(adapter);
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//                launchDetailActivity(position);
-//            }
-//        });
-
         mViewModel = obtainViewModel(this);
 
         setupToolbar();
@@ -78,11 +64,10 @@ public class MainActivity extends AppCompatActivity {
     private void setupListAdapter() {
         RecyclerView recyclerView = findViewById(R.id.recycler_sandwich_list);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(
-                this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setLayoutManager(
+                new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-        mSandwichAdapter = new SandwichAdapter(
-                this,
+        mSandwichAdapter = new SandwichAdapter(this,
                 new ArrayList<Sandwich>(0),
                 mViewModel
         );
