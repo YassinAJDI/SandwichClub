@@ -2,6 +2,7 @@ package com.udacity.sandwichclub.ui.sandwichlist;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
+import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -33,14 +34,16 @@ public class SandwichListViewModel extends AndroidViewModel {
 
     public SandwichListViewModel(@NonNull Application application) {
         super(application);
+        Timber.d("Create viewModel");
 
         mContext = application.getApplicationContext();
 
         // initialize data
+        mExecutors = AppExecutors.getInstance();
         mObservableSandwiches = new MutableLiveData<>();
         final List<Sandwich> sandwicheList = new ArrayList<>();
 
-        mObservableSandwiches.setValue(null);
+       // mObservableSandwiches.setValue(null);
         // parse json array on background thread
         mExecutors.diskIO().execute(new Runnable() {
             @Override
@@ -66,5 +69,9 @@ public class SandwichListViewModel extends AndroidViewModel {
                 }
             }
         });
+    }
+
+    public LiveData<List<Sandwich>> getSandwichList() {
+        return mObservableSandwiches;
     }
 }

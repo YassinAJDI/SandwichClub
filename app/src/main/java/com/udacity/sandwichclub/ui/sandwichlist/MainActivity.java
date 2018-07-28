@@ -1,7 +1,12 @@
 package com.udacity.sandwichclub.ui.sandwichlist;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,10 +18,13 @@ import com.udacity.sandwichclub.R;
 import com.udacity.sandwichclub.model.Sandwich;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private SandwichAdapter mSandwichAdapter;
+
+    private SandwichListViewModel mViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +48,22 @@ public class MainActivity extends AppCompatActivity {
         setupToolbar();
 
         setupListAdapter();
+
+        mViewModel = obtainViewModel(this);
+
+        // subscribe to sandwich observable livedata
+        mViewModel.getSandwichList().observe(this, new Observer<List<Sandwich>>() {
+            @Override
+            public void onChanged(@Nullable List<Sandwich> sandwiches) {
+                if (sandwiches != null) {
+                    mSandwichAdapter.replaceData(sandwiches);
+                }
+            }
+        });
+    }
+
+    private SandwichListViewModel obtainViewModel(FragmentActivity activity) {
+        return ViewModelProviders.of(activity).get(SandwichListViewModel.class);
     }
 
     private void setupListAdapter() {

@@ -11,12 +11,12 @@ import java.util.ArrayList;
 public class JsonUtils {
 
     public static Sandwich parseSandwichJson(String json) throws JSONException {
-        JSONObject jsonObject = new JSONObject(json);
+        JSONObject sandwichObject = new JSONObject(json);
 
         // get name object
-        JSONObject name = jsonObject.getJSONObject("name");
+        JSONObject name = sandwichObject.getJSONObject("name");
 
-        String mainName = jsonObject.getString("mainName");
+        String mainName = name.getString("mainName");
 
         JSONArray alsoKnownAs = name.getJSONArray("alsoKnownAs");
         ArrayList<String> knowAs = new ArrayList<>();
@@ -24,11 +24,11 @@ public class JsonUtils {
             knowAs.add(alsoKnownAs.getString(i));
         }
 
-        String placeOfOrigin = jsonObject.getString("placeOfOrigin");
-        String description = jsonObject.getString("description");
-        String image = jsonObject.getString("image");
+        String placeOfOrigin = sandwichObject.getString("placeOfOrigin");
+        String description = sandwichObject.getString("description");
+        String image = sandwichObject.getString("image");
 
-        JSONArray ingredientsJson = name.getJSONArray("ingredients");
+        JSONArray ingredientsJson = sandwichObject.getJSONArray("ingredients");
         ArrayList<String> ingredients = new ArrayList<>();
         for (int i = 0; i < ingredientsJson.length(); i++) {
             ingredients.add(ingredientsJson.getString(i));

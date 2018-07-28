@@ -72,7 +72,7 @@ public class SandwichAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         return mSandwichList != null ? mSandwichList.size() : 0;
     }
 
-    private void replaceData(List<Sandwich> sandwiches) {
+    public void replaceData(List<Sandwich> sandwiches) {
         mSandwichList = sandwiches;
         notifyDataSetChanged();
     }
