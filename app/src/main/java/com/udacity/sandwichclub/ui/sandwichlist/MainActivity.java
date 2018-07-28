@@ -60,6 +60,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // Subscribe to "open sandwich" event
+        mViewModel.getOpenSandwichEvent().observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(@Nullable Integer position) {
+                if (position != null) {
+                    launchDetailActivity(position);
+                }
+            }
+        });
     }
 
     private SandwichListViewModel obtainViewModel(FragmentActivity activity) {
@@ -74,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
 
         mSandwichAdapter = new SandwichAdapter(
                 this,
-                new ArrayList<Sandwich>(0)
+                new ArrayList<Sandwich>(0),
+                mViewModel
         );
         recyclerView.setAdapter(mSandwichAdapter);
     }

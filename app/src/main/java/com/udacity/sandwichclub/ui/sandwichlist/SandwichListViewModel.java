@@ -32,6 +32,8 @@ public class SandwichListViewModel extends AndroidViewModel {
 
     private final MutableLiveData<List<Sandwich>> mObservableSandwiches;
 
+    private final MutableLiveData<Integer> mOpenSandwichEvent = new MutableLiveData<>();
+
     public SandwichListViewModel(@NonNull Application application) {
         super(application);
         Timber.d("Creating viewModel");
@@ -43,7 +45,7 @@ public class SandwichListViewModel extends AndroidViewModel {
         mObservableSandwiches = new MutableLiveData<>();
         final List<Sandwich> sandwicheList = new ArrayList<>();
 
-       // mObservableSandwiches.setValue(null);
+        // mObservableSandwiches.setValue(null);
         // parse json array on background thread
         mExecutors.diskIO().execute(new Runnable() {
             @Override
@@ -73,5 +75,9 @@ public class SandwichListViewModel extends AndroidViewModel {
 
     public LiveData<List<Sandwich>> getSandwichList() {
         return mObservableSandwiches;
+    }
+
+    public MutableLiveData<Integer> getOpenSandwichEvent() {
+        return mOpenSandwichEvent;
     }
 }

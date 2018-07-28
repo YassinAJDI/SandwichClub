@@ -23,8 +23,11 @@ public class SandwichAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private List<Sandwich> mSandwichList;
 
-    public SandwichAdapter(Context context, List<Sandwich> sandwiches) {
+    private SandwichListViewModel mViewModel;
+
+    public SandwichAdapter(Context context, List<Sandwich> sandwiches, SandwichListViewModel viewModel) {
         mContext = context;
+        mViewModel = viewModel;
         replaceData(sandwiches);
     }
 
@@ -40,8 +43,8 @@ public class SandwichAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        Sandwich sandwich = mSandwichList.get(position);
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
+        final Sandwich sandwich = mSandwichList.get(position);
         SandwichViewHolder sandwichViewHolder = (SandwichViewHolder) holder;
 
         // sandwich image
@@ -60,7 +63,7 @@ public class SandwichAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         sandwichViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: 27/07/2018 show sandwich details
+                mViewModel.getOpenSandwichEvent().setValue(position);
             }
         });
 
