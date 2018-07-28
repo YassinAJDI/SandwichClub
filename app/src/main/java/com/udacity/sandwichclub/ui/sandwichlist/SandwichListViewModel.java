@@ -20,12 +20,15 @@ public class SandwichListViewModel extends AndroidViewModel {
     private final Context mContext;
 
     // MediatorLiveData can observe other LiveData objects and react on their emissions.
-//    private final MutableLiveData<List<Sandwich>> mObservableSandwiches;
+    private final MutableLiveData<List<Sandwich>> mObservableSandwiches;
 
     public SandwichListViewModel(@NonNull Application application) {
         super(application);
 
         mContext = application.getApplicationContext();
+        // initialize MutableLiveData
+        mObservableSandwiches = new MutableLiveData<>();
+        mObservableSandwiches.setValue(null);
 
     }
 

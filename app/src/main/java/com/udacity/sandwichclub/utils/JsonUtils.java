@@ -15,6 +15,7 @@ public class JsonUtils {
 
         // get name object
         JSONObject name = jsonObject.getJSONObject("name");
+
         String mainName = jsonObject.getString("mainName");
 
         JSONArray alsoKnownAs = name.getJSONArray("alsoKnownAs");

@@ -6,10 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import com.udacity.sandwichclub.DetailActivity;
 import com.udacity.sandwichclub.R;
@@ -46,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupListAdapter() {
-        RecyclerView recyclerView = findViewById(R.id.recycler_note_list);
+        RecyclerView recyclerView = findViewById(R.id.recycler_sandwich_list);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(
                 this, LinearLayoutManager.VERTICAL, false));
