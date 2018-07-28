@@ -41,4 +41,7 @@ dependencies {
 
     // Image loading
     implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    // For logging
+    implementation 'com.jakewharton.timber:timber:4.7.0'
 }
