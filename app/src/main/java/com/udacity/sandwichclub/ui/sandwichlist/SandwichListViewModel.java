@@ -28,8 +28,6 @@ public class SandwichListViewModel extends AndroidViewModel {
 
     private final Context mContext;
 
-    private AppExecutors mExecutors;
-
     private final MutableLiveData<List<Sandwich>> mObservableSandwiches;
 
     private final MutableLiveData<Integer> mOpenSandwichEvent = new MutableLiveData<>();
@@ -38,10 +36,9 @@ public class SandwichListViewModel extends AndroidViewModel {
         super(application);
         Timber.d("Creating viewModel");
 
-        mContext = application.getApplicationContext();
-
         // initialize data
-        mExecutors = AppExecutors.getInstance();
+        mContext = application.getApplicationContext();
+        AppExecutors mExecutors = AppExecutors.getInstance();
         mObservableSandwiches = new MutableLiveData<>();
         final List<Sandwich> sandwicheList = new ArrayList<>();
 
@@ -51,6 +48,7 @@ public class SandwichListViewModel extends AndroidViewModel {
             @Override
             public void run() {
                 Timber.d("Start parsing Json");
+                // TODO: 28/07/2018 add loading indicator
 
                 String[] sandwiches = mContext.getResources().getStringArray(R.array.sandwich_details);
                 for (int i = 0; i < sandwiches.length; i++) {

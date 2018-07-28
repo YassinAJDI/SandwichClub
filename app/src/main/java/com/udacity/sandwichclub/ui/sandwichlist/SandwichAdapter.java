@@ -14,6 +14,8 @@ import com.udacity.sandwichclub.model.Sandwich;
 
 import java.util.List;
 
+import timber.log.Timber;
+
 /**
  * @author Yassin Ajdi
  */
@@ -43,7 +45,7 @@ public class SandwichAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, final int position) {
         final Sandwich sandwich = mSandwichList.get(position);
         SandwichViewHolder sandwichViewHolder = (SandwichViewHolder) holder;
 
@@ -63,6 +65,8 @@ public class SandwichAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         sandwichViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int position = holder.getAdapterPosition();
+                Timber.d("Position clicked: " + position);
                 mViewModel.getOpenSandwichEvent().setValue(position);
             }
         });
