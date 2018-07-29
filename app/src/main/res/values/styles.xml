@@ -45,4 +45,12 @@
         <!--<item name="fontFamily">@font/rubik</item>-->
         <item name="android:textSize">10sp</item>
     </style>
+
+    <!--Details page-->
+    <style name="Chips">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:capitalize">words</item>
+        <item name="android:textColor">#ff232F34</item>
+        <item name="android:layout_marginEnd">8dp</item>
+    </style>
 </resources>

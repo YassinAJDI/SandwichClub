@@ -9,6 +9,7 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -41,6 +42,9 @@ dependencies {
 
     // Image loading
     implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    // Flexbox layout
+    implementation 'com.google.android:flexbox:1.0.0'
 
     // For logging
     implementation 'com.jakewharton.timber:timber:4.7.0'
