@@ -53,4 +53,10 @@
         <item name="android:textColor">#ff232F34</item>
         <item name="android:layout_marginEnd">8dp</item>
     </style>
+
+    <style name="DividerHorizontal">
+        <item name="android:background">?android:attr/listDivider</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
 </resources>

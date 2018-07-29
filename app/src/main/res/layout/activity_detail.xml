@@ -71,53 +71,73 @@
                 <TextView
                     android:id="@+id/origin_tv"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="32dp"
                     android:layout_marginTop="16dp"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                     app:layout_constraintEnd_toEndOf="@+id/text_sandwich_name"
                     app:layout_constraintStart_toStartOf="@+id/text_sandwich_name"
                     app:layout_constraintTop_toBottomOf="@+id/text_sandwich_name"
                     tools:text="@tools:sample/cities" />
 
+                <view
+                    android:id="@+id/description_divider"
+                    style="@style/DividerHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_height="0dp"
                     android:text="@string/detail_description_label"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@+id/text_sandwich_name"
                     app:layout_constraintStart_toStartOf="@+id/text_sandwich_name"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+                    tools:layout_editor_absoluteY="228dp" />
 
                 <TextView
                     android:id="@+id/description_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView4"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView3"
                     tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
 
+                <view
+                    android:id="@+id/ingredient_divider"
+                    style="@style/DividerHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
                     android:text="@string/detail_ingredients_label"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@+id/text_sandwich_name"
                     app:layout_constraintStart_toStartOf="@+id/text_sandwich_name"
-                    app:layout_constraintTop_toBottomOf="@+id/description_tv" />
+                    tools:layout_editor_absoluteY="478dp" />
 
                 <!--<ListView-->
                 <!--android:layout_width="match_parent"-->
@@ -169,20 +189,33 @@
                     app:layout_constraintTop_toTopOf="@+id/textView4"
                     app:srcCompat="@drawable/ic_assignment_black_24dp" />
 
+                <view
+                    android:id="@+id/view"
+                    style="@style/DividerHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/origin_tv" />
+
                 <com.google.android.flexbox.FlexboxLayout
                     android:id="@+id/linearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
                     app:alignContent="stretch"
                     app:alignItems="stretch"
-                    app:justifyContent="center"
                     app:flexWrap="wrap"
+                    app:justifyContent="center"
+                    app:layout_constraintBottom_toTopOf="@+id/textView3"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/origin_tv">
+                    app:layout_constraintStart_toStartOf="parent">
 
                     <TextView
                         android:id="@+id/textView"
