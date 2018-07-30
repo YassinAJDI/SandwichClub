@@ -16,6 +16,7 @@ public class JsonUtils {
 
     public static Sandwich parseSandwichJson(String json) throws JSONException {
         JSONObject sandwichObject = new JSONObject(json);
+        // TODO: 30/07/2018 add static names
 
         // name object
         JSONObject name = sandwichObject.getJSONObject("name");
