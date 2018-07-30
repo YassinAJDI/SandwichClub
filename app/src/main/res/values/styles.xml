@@ -47,6 +47,16 @@
     </style>
 
     <!--Details page-->
+
+    <style name="DetailTitle" parent="TextAppearance.AppCompat.Display1">
+
+    </style>
+
+
+    <style name="TextBody2" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
     <style name="Chips">
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
         <item name="android:capitalize">words</item>

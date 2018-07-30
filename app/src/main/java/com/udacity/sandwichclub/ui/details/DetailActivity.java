@@ -90,7 +90,7 @@ public class DetailActivity extends AppCompatActivity {
         // sandwich description
         mBinding.descriptionTv.setText(sandwich.getDescription());
         // sandwich origin
-        mBinding.originTv.setText(sandwich.getPlaceOfOrigin());
+        mBinding.textOrigin.setText(sandwich.getPlaceOfOrigin());
 
         mBinding.executePendingBindings();
     }

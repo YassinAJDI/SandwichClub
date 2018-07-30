@@ -52,224 +52,271 @@
             android:layout_height="wrap_content"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <android.support.constraint.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/text_sandwich_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="32dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Sandwich name title" />
-
-                <TextView
-                    android:id="@+id/origin_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:layout_marginBottom="32dp"
-                    android:layout_marginTop="16dp"
-                    app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-                    app:layout_constraintEnd_toEndOf="@+id/text_sandwich_name"
-                    app:layout_constraintStart_toStartOf="@+id/text_sandwich_name"
-                    app:layout_constraintTop_toBottomOf="@+id/text_sandwich_name"
-                    tools:text="@tools:sample/cities" />
-
-                <view
-                    android:id="@+id/description_divider"
-                    style="@style/DividerHorizontal"
-                    android:layout_width="match_parent"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginStart="16dp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView3"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:text="@string/detail_description_label"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/text_sandwich_name"
-                    app:layout_constraintStart_toStartOf="@+id/text_sandwich_name"
-                    tools:layout_editor_absoluteY="228dp" />
-
-                <TextView
-                    android:id="@+id/description_tv"
+                <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="32dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView4"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3"
-                    tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
+                    android:layout_marginBottom="4dp"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
 
-                <view
-                    android:id="@+id/ingredient_divider"
-                    style="@style/DividerHorizontal"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text_sandwich_name"
+                            style="@style/DetailTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="32dp"
+                            tools:text="Sandwich name title" />
+
+                        <TextView
+                            android:id="@+id/text_origin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:drawableStart="@drawable/ic_place_black_24dp"
+                            tools:text="@tools:sample/cities" />
+
+                        <com.google.android.flexbox.FlexboxLayout
+                            android:id="@+id/linearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexWrap="wrap"
+                            app:justifyContent="center"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/text_origin">
+
+                            <TextView
+                                android:id="@+id/textView"
+                                style="@style/Chips"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/chip_shape"
+                                android:text="Also known as" />
+
+                            <TextView
+                                android:id="@+id/chip2"
+                                style="@style/Chips"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/chip_shape"
+                                android:text="Name 2" />
+
+                            <TextView
+                                android:id="@+id/chip3"
+                                style="@style/Chips"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/chip_shape"
+                                android:text="Name 3" />
+
+                            <TextView
+                                android:id="@+id/chip4"
+                                style="@style/Chips"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/chip_shape"
+                                android:text="Name 2" />
+
+                            <TextView
+                                android:id="@+id/chip5"
+                                style="@style/Chips"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/chip_shape"
+                                android:text="Name 3" />
+
+                        </com.google.android.flexbox.FlexboxLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginStart="16dp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView4"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:text="@string/detail_ingredients_label"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/text_sandwich_name"
-                    app:layout_constraintStart_toStartOf="@+id/text_sandwich_name"
-                    tools:layout_editor_absoluteY="478dp" />
+                    android:layout_marginBottom="4dp"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
 
-                <!--<ListView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content">-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-                <!--</ListView>-->
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="16dp"
+                            android:drawableStart="@drawable/ic_info_black_24dp"
+                            android:text="@string/detail_description_label"
+                            android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/ingredients_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView4"
-                    tools:text="@tools:sample/lorem" />
+                        <TextView
+                            android:id="@+id/description_tv"
+                            style="@style/TextBody2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/origin_tv"
-                    app:layout_constraintEnd_toStartOf="@+id/origin_tv"
-                    app:layout_constraintTop_toTopOf="@+id/origin_tv"
-                    app:srcCompat="@drawable/ic_place_black_24dp" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
 
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView3"
-                    app:layout_constraintEnd_toStartOf="@+id/textView3"
-                    app:layout_constraintTop_toTopOf="@+id/textView3"
-                    app:srcCompat="@drawable/ic_info_black_24dp" />
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView4"
-                    app:layout_constraintEnd_toStartOf="@+id/textView4"
-                    app:layout_constraintTop_toTopOf="@+id/textView4"
-                    app:srcCompat="@drawable/ic_assignment_black_24dp" />
-
-                <view
-                    android:id="@+id/view"
-                    style="@style/DividerHorizontal"
-                    android:layout_width="match_parent"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/linearLayout"
-                    app:layout_constraintTop_toBottomOf="@+id/origin_tv" />
-
-                <com.google.android.flexbox.FlexboxLayout
-                    android:id="@+id/linearLayout"
+                <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="24dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginStart="16dp"
-                    app:alignContent="stretch"
-                    app:alignItems="stretch"
-                    app:flexWrap="wrap"
-                    app:justifyContent="center"
-                    app:layout_constraintBottom_toTopOf="@+id/textView3"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
+                    android:layout_marginBottom="8dp"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
 
-                    <TextView
-                        android:id="@+id/textView"
-                        style="@style/Chips"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/chip_shape"
-                        android:text="Also known as" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/chip2"
-                        style="@style/Chips"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/chip_shape"
-                        android:text="Name 2" />
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="16dp"
+                            android:drawableStart="@drawable/ic_assignment_black_24dp"
+                            android:text="@string/detail_ingredients_label"
+                            android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/chip3"
-                        style="@style/Chips"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/chip_shape"
-                        android:text="Name 3" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
 
-                    <TextView
-                        android:id="@+id/chip4"
-                        style="@style/Chips"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/chip_shape"
-                        android:text="Name 2" />
 
-                    <TextView
-                        android:id="@+id/chip5"
-                        style="@style/Chips"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/chip_shape"
-                        android:text="Name 3" />
+                        <!--<ListView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+                    </LinearLayout>
 
-                </com.google.android.flexbox.FlexboxLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
 
-            </android.support.constraint.ConstraintLayout>
+            <!--<android.support.constraint.ConstraintLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+
+            <!--<View-->
+            <!--android:id="@+id/description_divider"-->
+            <!--style="@style/DividerHorizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_marginEnd="16dp"-->
+            <!--android:layout_marginStart="16dp"-->
+            <!--app:layout_constraintBottom_toTopOf="@+id/textView3"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/linearLayout" />-->
+
+
+            <!--<View-->
+            <!--android:id="@+id/ingredient_divider"-->
+            <!--style="@style/DividerHorizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:layout_marginEnd="16dp"-->
+            <!--android:layout_marginStart="16dp"-->
+            <!--app:layout_constraintBottom_toTopOf="@+id/textView4"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent" />-->
+
+
+            <!--&lt;!&ndash;</ListView>&ndash;&gt;-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/ingredients_tv"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:layout_marginEnd="16dp"-->
+            <!--android:layout_marginStart="16dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/textView4"-->
+            <!--tools:text="@tools:sample/lorem" />-->
+
+
+            <!--<ImageView-->
+            <!--android:id="@+id/imageView2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="8dp"-->
+            <!--app:layout_constraintBottom_toBottomOf="@+id/textView3"-->
+            <!--app:layout_constraintEnd_toStartOf="@+id/textView3"-->
+            <!--app:layout_constraintTop_toTopOf="@+id/textView3"-->
+            <!--app:srcCompat="@drawable/ic_info_black_24dp" />-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/imageView3"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="8dp"-->
+            <!--app:layout_constraintBottom_toBottomOf="@+id/textView4"-->
+            <!--app:layout_constraintEnd_toStartOf="@+id/textView4"-->
+            <!--app:layout_constraintTop_toTopOf="@+id/textView4"-->
+            <!--app:srcCompat="@drawable/ic_assignment_black_24dp" />-->
+
+            <!--<View-->
+            <!--android:id="@+id/view"-->
+            <!--style="@style/DividerHorizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:layout_marginEnd="16dp"-->
+            <!--android:layout_marginStart="16dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--app:layout_constraintBottom_toTopOf="@+id/linearLayout"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="@+id/linearLayout"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/text_origin" />-->
+
+            <!--</android.support.constraint.ConstraintLayout>-->
 
             <!--<LinearLayout-->
             <!--android:layout_width="match_parent"-->
@@ -324,7 +371,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_horizontal_margin"
             android:src="@drawable/fish"
-            app:backgroundTint="@color/md_white_1000"
+            android:tint="@color/cardview_light_background"
+            app:backgroundTint="@color/colorAccent"
             app:layout_anchor="@id/appbar"
             app:layout_anchorGravity="bottom|center" />
     </android.support.design.widget.CoordinatorLayout>
