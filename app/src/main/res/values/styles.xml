@@ -66,7 +66,7 @@
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
         <item name="android:capitalize">words</item>
         <item name="android:textColor">#ff232F34</item>
-        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:background">@drawable/chip_shape</item>
     </style>
 
     <style name="DividerHorizontal">

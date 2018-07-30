@@ -7,16 +7,24 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.flexbox.FlexboxLayout;
 import com.squareup.picasso.Picasso;
 import com.udacity.sandwichclub.R;
 import com.udacity.sandwichclub.databinding.ActivityDetailBinding;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.ui.sandwichlist.SandwichListViewModel;
+
+import java.util.List;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -87,10 +95,34 @@ public class DetailActivity extends AppCompatActivity {
 
         // sandwich main name
         mBinding.textSandwichName.setText(sandwich.getMainName());
+
+        // sandwich origin
+        String placeOfOrigin = sandwich.getPlaceOfOrigin();
+        if (placeOfOrigin.isEmpty()) {
+            mBinding.textOrigin.setVisibility(View.GONE);
+        } else {
+            mBinding.textOrigin.setText(placeOfOrigin);
+        }
+
+        // also known as
+        List<String> names = sandwich.getAlsoKnownAs();
+        if (!names.isEmpty()) {
+            for (String name : names) {
+                TextView textView = new TextView(this);
+                textView.setText(name);
+                textView.setBackground(ContextCompat.getDrawable(this, R.drawable.chip_shape));
+                TextViewCompat.setTextAppearance(textView, R.style.Chips);
+                FlexboxLayout.LayoutParams layoutParams = new FlexboxLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                layoutParams.setMargins(0, 0, 8, 8);
+                textView.setLayoutParams(layoutParams);
+                mBinding.flexbox.addView(textView);
+            }
+        }
+
         // sandwich description
         mBinding.descriptionTv.setText(sandwich.getDescription());
-        // sandwich origin
-        mBinding.textOrigin.setText(sandwich.getPlaceOfOrigin());
+
 
         mBinding.executePendingBindings();
     }

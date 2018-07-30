@@ -97,12 +97,13 @@
                             tools:text="@tools:sample/cities" />
 
                         <com.google.android.flexbox.FlexboxLayout
-                            android:id="@+id/linearLayout"
+                            android:id="@+id/flexbox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="16dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
+                            android:layout_marginBottom="8dp"
                             app:alignContent="stretch"
                             app:alignItems="stretch"
                             app:flexWrap="wrap"
@@ -111,55 +112,50 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/text_origin">
 
-                            <TextView
-                                android:id="@+id/textView"
-                                style="@style/Chips"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="8dp"
-                                android:layout_marginEnd="8dp"
-                                android:background="@drawable/chip_shape"
-                                android:text="Also known as" />
+                            <!--<TextView-->
+                                <!--android:id="@+id/textView"-->
+                                <!--style="@style/Chips"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="8dp"-->
+                                <!--android:background="@drawable/chip_shape"-->
+                                <!--android:text="Also known as" />-->
 
-                            <TextView
-                                android:id="@+id/chip2"
-                                style="@style/Chips"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="8dp"
-                                android:layout_marginEnd="8dp"
-                                android:background="@drawable/chip_shape"
-                                android:text="Name 2" />
+                            <!--<TextView-->
+                                <!--android:id="@+id/chip2"-->
+                                <!--style="@style/Chips"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="8dp"-->
+                                <!--android:background="@drawable/chip_shape"-->
+                                <!--android:text="Name 2" />-->
 
-                            <TextView
-                                android:id="@+id/chip3"
-                                style="@style/Chips"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="8dp"
-                                android:layout_marginEnd="8dp"
-                                android:background="@drawable/chip_shape"
-                                android:text="Name 3" />
+                            <!--<TextView-->
+                                <!--android:id="@+id/chip3"-->
+                                <!--style="@style/Chips"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="8dp"-->
+                                <!--android:background="@drawable/chip_shape"-->
+                                <!--android:text="Name 3" />-->
 
-                            <TextView
-                                android:id="@+id/chip4"
-                                style="@style/Chips"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="8dp"
-                                android:layout_marginEnd="8dp"
-                                android:background="@drawable/chip_shape"
-                                android:text="Name 2" />
+                            <!--<TextView-->
+                                <!--android:id="@+id/chip4"-->
+                                <!--style="@style/Chips"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="8dp"-->
+                                <!--android:background="@drawable/chip_shape"-->
+                                <!--android:text="Name 2" />-->
 
-                            <TextView
-                                android:id="@+id/chip5"
-                                style="@style/Chips"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="8dp"
-                                android:layout_marginEnd="8dp"
-                                android:background="@drawable/chip_shape"
-                                android:text="Name 3" />
+                            <!--<TextView-->
+                                <!--android:id="@+id/chip5"-->
+                                <!--style="@style/Chips"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="8dp"-->
+                                <!--android:background="@drawable/chip_shape"-->
+                                <!--android:text="Name 3" />-->
 
                         </com.google.android.flexbox.FlexboxLayout>
                     </LinearLayout>
