@@ -109,7 +109,7 @@ public class DetailActivity extends AppCompatActivity {
             mBinding.textOrigin.setText(placeOfOrigin);
         }
 
-        // programmatically add "also known as" labels
+        // Programmatically create & add "also known as" labels
         List<String> names = sandwich.getAlsoKnownAs();
         if (!names.isEmpty()) {
             for (String name : names) {
@@ -134,19 +134,14 @@ public class DetailActivity extends AppCompatActivity {
         // ingredients
         UiUtils.setTextViewDrawableColor(this, mBinding.textView4, R.color.colorAccent);
         List<String> ingredients = sandwich.getIngredients();
-//        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-//                this, android.R.layout.simple_list_item_1, ingredients);
-//        mBinding.listIngredients.setAdapter(adapter);
         for (String ingredient : ingredients) {
             TextView textView = new TextView(this);
             textView.setText(ingredient);
-//            textView.setBackground(ContextCompat.getDrawable(this, R.drawable.chip_shape));
             TextViewCompat.setTextAppearance(textView, R.style.Chips);
-//            FlexboxLayout.LayoutParams layoutParams = new FlexboxLayout.LayoutParams(
-//                    ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-//            layoutParams.setMargins(0, 0, 8, 8);
-//            textView.setLayoutParams(layoutParams);
-//            mBinding..addView(textView);
+            textView.setPadding(0, 8, 0, 8);
+            textView.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(
+                    this, R.drawable.bullet), null, null, null);
+            textView.setCompoundDrawablePadding(32);
             mBinding.ingredients.addView(textView);
         }
 
