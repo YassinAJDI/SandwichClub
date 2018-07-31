@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,8 @@ import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.ui.sandwichlist.SandwichListViewModel;
 
 import java.util.List;
+
+import timber.log.Timber;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -104,7 +107,7 @@ public class DetailActivity extends AppCompatActivity {
             mBinding.textOrigin.setText(placeOfOrigin);
         }
 
-        // also known as
+        // programmatically add "also known as" labels
         List<String> names = sandwich.getAlsoKnownAs();
         if (!names.isEmpty()) {
             for (String name : names) {
@@ -118,11 +121,31 @@ public class DetailActivity extends AppCompatActivity {
                 textView.setLayoutParams(layoutParams);
                 mBinding.flexbox.addView(textView);
             }
+        } else {
+            mBinding.flexbox.setVisibility(View.GONE);
         }
 
         // sandwich description
         mBinding.descriptionTv.setText(sandwich.getDescription());
 
+        // ingredients
+        List<String> ingredients = sandwich.getIngredients();
+        Timber.d("ingredients size: " + ingredients);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+//                this, android.R.layout.simple_list_item_1, ingredients);
+//        mBinding.listIngredients.setAdapter(adapter);
+        for (String ingredient : ingredients) {
+            TextView textView = new TextView(this);
+            textView.setText(ingredient);
+//            textView.setBackground(ContextCompat.getDrawable(this, R.drawable.chip_shape));
+            TextViewCompat.setTextAppearance(textView, R.style.Chips);
+//            FlexboxLayout.LayoutParams layoutParams = new FlexboxLayout.LayoutParams(
+//                    ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//            layoutParams.setMargins(0, 0, 8, 8);
+//            textView.setLayoutParams(layoutParams);
+//            mBinding..addView(textView);
+            mBinding.ingredients.addView(textView);
+        }
 
         mBinding.executePendingBindings();
     }

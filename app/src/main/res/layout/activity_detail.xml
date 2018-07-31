@@ -91,6 +91,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="16dp"
                             android:drawablePadding="8dp"
                             android:drawableStart="@drawable/ic_place_black_24dp"
                             android:gravity="center"
@@ -100,10 +101,9 @@
                             android:id="@+id/flexbox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
                             android:layout_marginEnd="16dp"
                             android:layout_marginStart="16dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="8dp"
                             app:alignContent="stretch"
                             app:alignItems="stretch"
                             app:flexWrap="wrap"
@@ -111,51 +111,6 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/text_origin">
-
-                            <!--<TextView-->
-                                <!--android:id="@+id/textView"-->
-                                <!--style="@style/Chips"-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="wrap_content"-->
-                                <!--android:layout_marginBottom="8dp"-->
-                                <!--android:background="@drawable/chip_shape"-->
-                                <!--android:text="Also known as" />-->
-
-                            <!--<TextView-->
-                                <!--android:id="@+id/chip2"-->
-                                <!--style="@style/Chips"-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="wrap_content"-->
-                                <!--android:layout_marginBottom="8dp"-->
-                                <!--android:background="@drawable/chip_shape"-->
-                                <!--android:text="Name 2" />-->
-
-                            <!--<TextView-->
-                                <!--android:id="@+id/chip3"-->
-                                <!--style="@style/Chips"-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="wrap_content"-->
-                                <!--android:layout_marginBottom="8dp"-->
-                                <!--android:background="@drawable/chip_shape"-->
-                                <!--android:text="Name 3" />-->
-
-                            <!--<TextView-->
-                                <!--android:id="@+id/chip4"-->
-                                <!--style="@style/Chips"-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="wrap_content"-->
-                                <!--android:layout_marginBottom="8dp"-->
-                                <!--android:background="@drawable/chip_shape"-->
-                                <!--android:text="Name 2" />-->
-
-                            <!--<TextView-->
-                                <!--android:id="@+id/chip5"-->
-                                <!--style="@style/Chips"-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="wrap_content"-->
-                                <!--android:layout_marginBottom="8dp"-->
-                                <!--android:background="@drawable/chip_shape"-->
-                                <!--android:text="Name 3" />-->
 
                         </com.google.android.flexbox.FlexboxLayout>
                     </LinearLayout>
@@ -203,15 +158,16 @@
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="4dp"
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardCornerRadius="2dp"
                     app:cardElevation="2dp">
 
                     <LinearLayout
+                        android:id="@+id/ingredients"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:orientation="vertical">
 
                         <TextView
@@ -229,148 +185,10 @@
                             android:text="@string/detail_ingredients_label"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                        <TextView
-                            style="@style/TextBody2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="16dp"
-                            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
-
-
-                        <!--<ListView-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content">-->
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
             </LinearLayout>
-
-            <!--<android.support.constraint.ConstraintLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content">-->
-
-
-            <!--<View-->
-            <!--android:id="@+id/description_divider"-->
-            <!--style="@style/DividerHorizontal"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_marginEnd="16dp"-->
-            <!--android:layout_marginStart="16dp"-->
-            <!--app:layout_constraintBottom_toTopOf="@+id/textView3"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--app:layout_constraintTop_toBottomOf="@+id/linearLayout" />-->
-
-
-            <!--<View-->
-            <!--android:id="@+id/ingredient_divider"-->
-            <!--style="@style/DividerHorizontal"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_marginBottom="16dp"-->
-            <!--android:layout_marginEnd="16dp"-->
-            <!--android:layout_marginStart="16dp"-->
-            <!--app:layout_constraintBottom_toTopOf="@+id/textView4"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintStart_toStartOf="parent" />-->
-
-
-            <!--&lt;!&ndash;</ListView>&ndash;&gt;-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/ingredients_tv"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginBottom="16dp"-->
-            <!--android:layout_marginEnd="16dp"-->
-            <!--android:layout_marginStart="16dp"-->
-            <!--android:layout_marginTop="16dp"-->
-            <!--app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--app:layout_constraintTop_toBottomOf="@+id/textView4"-->
-            <!--tools:text="@tools:sample/lorem" />-->
-
-
-            <!--<ImageView-->
-            <!--android:id="@+id/imageView2"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginEnd="8dp"-->
-            <!--app:layout_constraintBottom_toBottomOf="@+id/textView3"-->
-            <!--app:layout_constraintEnd_toStartOf="@+id/textView3"-->
-            <!--app:layout_constraintTop_toTopOf="@+id/textView3"-->
-            <!--app:srcCompat="@drawable/ic_info_black_24dp" />-->
-
-            <!--<ImageView-->
-            <!--android:id="@+id/imageView3"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginEnd="8dp"-->
-            <!--app:layout_constraintBottom_toBottomOf="@+id/textView4"-->
-            <!--app:layout_constraintEnd_toStartOf="@+id/textView4"-->
-            <!--app:layout_constraintTop_toTopOf="@+id/textView4"-->
-            <!--app:srcCompat="@drawable/ic_assignment_black_24dp" />-->
-
-            <!--<View-->
-            <!--android:id="@+id/view"-->
-            <!--style="@style/DividerHorizontal"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_marginBottom="16dp"-->
-            <!--android:layout_marginEnd="16dp"-->
-            <!--android:layout_marginStart="16dp"-->
-            <!--android:layout_marginTop="16dp"-->
-            <!--app:layout_constraintBottom_toTopOf="@+id/linearLayout"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintStart_toStartOf="@+id/linearLayout"-->
-            <!--app:layout_constraintTop_toBottomOf="@+id/text_origin" />-->
-
-            <!--</android.support.constraint.ConstraintLayout>-->
-
-            <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:orientation="vertical">-->
-
-
-            <!--<TextView-->
-            <!--android:id="@+id/origin_tv"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content" />-->
-
-            <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@string/detail_also_known_as_label"-->
-            <!--android:textStyle="bold" />-->
-
-            <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@string/detail_place_of_origin_label"-->
-            <!--android:textStyle="bold" />-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/description_tv"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content" />-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/ingredients_tv"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content" />-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/also_known_tv"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content" />-->
-
-            <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@string/detail_description_label"-->
-            <!--android:textStyle="bold" />-->
-
-            <!--</LinearLayout>-->
 
         </android.support.v4.widget.NestedScrollView>
 
