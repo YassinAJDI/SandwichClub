@@ -24,6 +24,7 @@ import com.udacity.sandwichclub.R;
 import com.udacity.sandwichclub.databinding.ActivityDetailBinding;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.ui.sandwichlist.SandwichListViewModel;
+import com.udacity.sandwichclub.utils.UiUtils;
 
 import java.util.List;
 
@@ -104,6 +105,7 @@ public class DetailActivity extends AppCompatActivity {
         if (placeOfOrigin.isEmpty()) {
             mBinding.textOrigin.setVisibility(View.GONE);
         } else {
+            UiUtils.setTextViewDrawableColor(this, mBinding.textOrigin, R.color.colorAccent);
             mBinding.textOrigin.setText(placeOfOrigin);
         }
 
@@ -126,11 +128,12 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         // sandwich description
+        UiUtils.setTextViewDrawableColor(this, mBinding.textView3, R.color.colorAccent);
         mBinding.descriptionTv.setText(sandwich.getDescription());
 
         // ingredients
+        UiUtils.setTextViewDrawableColor(this, mBinding.textView4, R.color.colorAccent);
         List<String> ingredients = sandwich.getIngredients();
-        Timber.d("ingredients size: " + ingredients);
 //        ArrayAdapter<String> adapter = new ArrayAdapter<>(
 //                this, android.R.layout.simple_list_item_1, ingredients);
 //        mBinding.listIngredients.setAdapter(adapter);
