@@ -176,14 +176,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
-                            android:layout_marginEnd="16dp"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="16dp"
+                            android:layout_margin="16dp"
                             android:drawablePadding="16dp"
                             android:drawableStart="@drawable/ic_assignment_black_24dp"
                             android:gravity="center"
-                            android:text="@string/detail_ingredients_label"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                            android:text="@string/detail_ingredients_label" />
 
                     </LinearLayout>
 
