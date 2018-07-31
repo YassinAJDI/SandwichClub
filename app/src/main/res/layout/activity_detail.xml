@@ -183,6 +183,15 @@
                             android:gravity="center"
                             android:text="@string/detail_ingredients_label" />
 
+                        <LinearLayout
+                            android:id="@+id/ingredients_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layerType="software"
+                            android:orientation="vertical">
+
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>

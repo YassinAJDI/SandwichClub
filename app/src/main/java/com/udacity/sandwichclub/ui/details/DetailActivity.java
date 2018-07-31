@@ -83,7 +83,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void setupToolbar() {
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = mBinding.toolbar;
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -92,15 +92,16 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI(Sandwich sandwich) {
-        // sandwich image
+        // Sandwich image
         Picasso.with(this)
                 .load(sandwich.getImage())
+                .placeholder(R.color.md_grey_200)
                 .into(mBinding.imageRecipe);
 
-        // sandwich main name
+        // Sandwich main name
         mBinding.textSandwichName.setText(sandwich.getMainName());
 
-        // sandwich origin
+        // Sandwich origin
         String placeOfOrigin = sandwich.getPlaceOfOrigin();
         if (placeOfOrigin.isEmpty()) {
             mBinding.textOrigin.setVisibility(View.GONE);
@@ -127,22 +128,23 @@ public class DetailActivity extends AppCompatActivity {
             mBinding.flexbox.setVisibility(View.GONE);
         }
 
-        // sandwich description
+        // Sandwich description
         UiUtils.setTextViewDrawableColor(this, mBinding.textView3, R.color.colorAccent);
         mBinding.descriptionTv.setText(sandwich.getDescription());
 
-        // ingredients
+        // Ingredients List
         UiUtils.setTextViewDrawableColor(this, mBinding.textView4, R.color.colorAccent);
         List<String> ingredients = sandwich.getIngredients();
         for (String ingredient : ingredients) {
             TextView textView = new TextView(this);
             textView.setText(ingredient);
             TextViewCompat.setTextAppearance(textView, R.style.Chips);
-            textView.setPadding(0, 8, 0, 8);
+            textView.setPadding(0, 32, 0, 32);
             textView.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(
                     this, R.drawable.bullet), null, null, null);
+            textView.setBackground(ContextCompat.getDrawable(this, R.drawable.dashed_line));
             textView.setCompoundDrawablePadding(32);
-            mBinding.ingredients.addView(textView);
+            mBinding.ingredientsList.addView(textView);
         }
 
         mBinding.executePendingBindings();
