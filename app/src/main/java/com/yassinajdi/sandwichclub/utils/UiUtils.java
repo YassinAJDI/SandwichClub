@@ -1,4 +1,4 @@
-package com.udacity.sandwichclub.utils;
+package com.yassinajdi.sandwichclub.utils;
 
 import android.content.Context;
 import android.graphics.PorterDuff;

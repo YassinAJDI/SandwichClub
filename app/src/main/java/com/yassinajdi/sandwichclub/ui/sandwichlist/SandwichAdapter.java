@@ -1,4 +1,4 @@
-package com.udacity.sandwichclub.ui.sandwichlist;
+package com.yassinajdi.sandwichclub.ui.sandwichlist;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
-import com.udacity.sandwichclub.databinding.ItemSandwichBinding;
-import com.udacity.sandwichclub.model.Sandwich;
-import com.udacity.sandwichclub.utils.GlideApp;
+import com.yassinajdi.sandwichclub.databinding.ItemSandwichBinding;
+import com.yassinajdi.sandwichclub.model.Sandwich;
+import com.yassinajdi.sandwichclub.utils.GlideApp;
 
 import java.util.List;
 

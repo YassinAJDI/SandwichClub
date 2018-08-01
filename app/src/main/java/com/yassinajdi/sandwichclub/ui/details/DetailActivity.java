@@ -1,4 +1,4 @@
-package com.udacity.sandwichclub.ui.details;
+package com.yassinajdi.sandwichclub.ui.details;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -17,11 +17,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.flexbox.FlexboxLayout;
-import com.udacity.sandwichclub.R;
-import com.udacity.sandwichclub.databinding.ActivityDetailBinding;
-import com.udacity.sandwichclub.model.Sandwich;
-import com.udacity.sandwichclub.utils.GlideApp;
-import com.udacity.sandwichclub.utils.UiUtils;
+import com.yassinajdi.sandwichclub.R;
+import com.yassinajdi.sandwichclub.databinding.ActivityDetailBinding;
+import com.yassinajdi.sandwichclub.model.Sandwich;
+import com.yassinajdi.sandwichclub.utils.GlideApp;
+import com.yassinajdi.sandwichclub.utils.UiUtils;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.udacity.sandwichclub.ui.details;
+package com.yassinajdi.sandwichclub.ui.details;
 
 import android.app.Application;
 import android.arch.lifecycle.ViewModel;

@@ -1,4 +1,4 @@
-package com.udacity.sandwichclub.model;
+package com.yassinajdi.sandwichclub.model;
 
 import java.util.List;
 

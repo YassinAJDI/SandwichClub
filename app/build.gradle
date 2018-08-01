@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     buildToolsVersion '27.0.3'
     defaultConfig {
-        applicationId "com.udacity.sandwichclub"
+        applicationId "com.yassinajdi.sandwichclub"
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 1

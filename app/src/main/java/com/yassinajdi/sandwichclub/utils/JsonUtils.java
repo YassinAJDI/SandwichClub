@@ -1,8 +1,8 @@
-package com.udacity.sandwichclub.utils;
+package com.yassinajdi.sandwichclub.utils;
 
 import android.support.annotation.NonNull;
 
-import com.udacity.sandwichclub.model.Sandwich;
+import com.yassinajdi.sandwichclub.model.Sandwich;
 
 import org.json.JSONArray;
 import org.json.JSONException;
