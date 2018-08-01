@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Subscribe to "open sandwich" event
-        // TODO: 28/07/2018 fix bug event firing on configuration changes
         mViewModel.getOpenSandwichEvent().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer position) {

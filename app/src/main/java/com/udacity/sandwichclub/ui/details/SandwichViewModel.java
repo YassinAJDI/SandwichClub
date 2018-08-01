@@ -24,7 +24,7 @@ public class SandwichViewModel extends AndroidViewModel {
 
     private final MutableLiveData<Sandwich> mSandwich = new MutableLiveData<>();
 
-    public SandwichViewModel(@NonNull Application application) {
+    public SandwichViewModel(@NonNull Application application, final int position) {
         super(application);
         Timber.d("Creating viewModel");
 
@@ -32,10 +32,6 @@ public class SandwichViewModel extends AndroidViewModel {
         mContext = application.getApplicationContext();
         mExecutors = AppExecutors.getInstance();
 
-    }
-
-    public void setCurrentPosition(final int position) {
-        // TODO: 28/07/2018 move inside constructor and use factory
         // parse json array on background thread
         mExecutors.diskIO().execute(new Runnable() {
             @Override
@@ -59,6 +55,11 @@ public class SandwichViewModel extends AndroidViewModel {
                 }
             }
         });
+
+    }
+
+    public void setCurrentPosition(final int position) {
+
     }
 
     public LiveData<Sandwich> getSandwich() {

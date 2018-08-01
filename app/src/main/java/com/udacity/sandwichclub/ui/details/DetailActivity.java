@@ -55,9 +55,9 @@ public class DetailActivity extends AppCompatActivity {
 
         setupToolbar();
 
-        SandwichViewModel mViewModel = obtainViewModel(this);
+        SandwichViewModel mViewModel = obtainViewModel(this, position);
 
-        mViewModel.setCurrentPosition(position);
+//        mViewModel.setCurrentPosition(position);
 
         // Subscribe to sandwich changes
         mViewModel.getSandwich().observe(this, new Observer<Sandwich>() {
@@ -77,8 +77,9 @@ public class DetailActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
     }
 
-    private SandwichViewModel obtainViewModel(FragmentActivity activity) {
-        return ViewModelProviders.of(activity).get(SandwichViewModel.class);
+    private SandwichViewModel obtainViewModel(FragmentActivity activity, int position) {
+        ViewModelFactory factory = ViewModelFactory.getInstance(activity.getApplication(), position);
+        return ViewModelProviders.of(activity, factory).get(SandwichViewModel.class);
     }
 
     private void setupToolbar() {
@@ -94,6 +95,7 @@ public class DetailActivity extends AppCompatActivity {
         // Sandwich image
         GlideApp.with(this)
                 .load(sandwich.getImage())
+                .placeholder(R.color.md_grey_200)
                 .into(mBinding.imageRecipe);
 
         // Sandwich main name
