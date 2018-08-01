@@ -106,7 +106,7 @@ public class DetailActivity extends AppCompatActivity {
         if (placeOfOrigin.isEmpty()) {
             mBinding.textOrigin.setVisibility(View.GONE);
         } else {
-            UiUtils.setTextViewDrawableColor(this, mBinding.textOrigin, R.color.colorAccent);
+            UiUtils.setTextViewDrawableColor(this, mBinding.textOrigin, R.color.text_black_54);
             mBinding.textOrigin.setText(placeOfOrigin);
         }
 
@@ -129,11 +129,11 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         // Sandwich description
-        UiUtils.setTextViewDrawableColor(this, mBinding.textView3, R.color.colorAccent);
+        UiUtils.setTextViewDrawableColor(this, mBinding.textView3, R.color.text_black_54);
         mBinding.descriptionTv.setText(sandwich.getDescription());
 
         // Ingredients List
-        UiUtils.setTextViewDrawableColor(this, mBinding.textView4, R.color.colorAccent);
+        UiUtils.setTextViewDrawableColor(this, mBinding.textView4, R.color.text_black_54);
         List<String> ingredients = sandwich.getIngredients();
         for (String ingredient : ingredients) {
             TextView textView = new TextView(this);
