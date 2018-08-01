@@ -31,16 +31,17 @@
     </style>
 
     <!--Card Styles -->
-    <style name="CardArticleItemText" parent="MetaDataText" />
+    <style name="CardArticleItemText" parent="MetaDataText">
+        <item name="android:ellipsize">end</item>
+    </style>
 
     <style name="CardArticleItemText.Headline" parent="TextAppearance.AppCompat.Title">
-        <item name="android:textAppearance">@android:style/TextAppearance</item>
+        <!--<item name="android:textAppearance">@android:style/TextAppearance</item>-->
         <!--<item name="fontFamily">@font/rubik_medium</item>-->
         <item name="android:maxLines">2</item>
     </style>
 
     <style name="CardArticleItemText.Time" parent="TextAppearance.AppCompat.Caption">
-        <item name="android:ellipsize">end</item>
         <item name="android:maxLines">2</item>
         <!--<item name="fontFamily">@font/rubik</item>-->
         <item name="android:textSize">10sp</item>
