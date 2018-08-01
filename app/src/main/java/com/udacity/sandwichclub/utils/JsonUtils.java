@@ -14,31 +14,38 @@ import java.util.List;
 
 public class JsonUtils {
 
+    private final static String KEY_NAME = "name";
+    private final static String KEY_MAIN_NAME = "mainName";
+    private final static String KEY_ALSO_KNOWN_AS = "alsoKnownAs";
+    private final static String KEY_PLACE_OF_ORIGIN = "placeOfOrigin";
+    private final static String KEY_DESCRIPTION = "description";
+    private final static String KEY_IMAGE_URL = "image";
+    private final static String KEY_INGREDIENTS = "ingredients";
+
     public static Sandwich parseSandwichJson(String json) throws JSONException {
         JSONObject sandwichObject = new JSONObject(json);
-        // TODO: 30/07/2018 add static names
 
         // name object
-        JSONObject name = sandwichObject.getJSONObject("name");
+        JSONObject name = sandwichObject.getJSONObject(KEY_NAME);
 
         // mainName
-        String mainName = name.getString("mainName");
+        String mainName = name.getString(KEY_MAIN_NAME);
 
         // Also known as
-        JSONArray alsoKnownAs = name.getJSONArray("alsoKnownAs");
+        JSONArray alsoKnownAs = name.getJSONArray(KEY_ALSO_KNOWN_AS);
         List<String> knowAs = getStrings(alsoKnownAs);
 
         // Place of origin
-        String placeOfOrigin = sandwichObject.getString("placeOfOrigin");
+        String placeOfOrigin = sandwichObject.getString(KEY_PLACE_OF_ORIGIN);
 
         // Description
-        String description = sandwichObject.getString("description");
+        String description = sandwichObject.getString(KEY_DESCRIPTION);
 
         // Image
-        String image = sandwichObject.getString("image");
+        String image = sandwichObject.getString(KEY_IMAGE_URL);
 
         // Ingredients
-        JSONArray ingredientsJson = sandwichObject.getJSONArray("ingredients");
+        JSONArray ingredientsJson = sandwichObject.getJSONArray(KEY_INGREDIENTS);
         List<String> ingredients = getStrings(ingredientsJson);
 
         return new Sandwich(mainName, knowAs, placeOfOrigin, description, image, ingredients);
