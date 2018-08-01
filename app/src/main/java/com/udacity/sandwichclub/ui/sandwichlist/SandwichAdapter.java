@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.udacity.sandwichclub.R;
 import com.udacity.sandwichclub.databinding.ItemSandwichBinding;
 import com.udacity.sandwichclub.model.Sandwich;
@@ -52,6 +55,7 @@ public class SandwichAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         // sandwich image
         GlideApp.with(mContext)
                 .load(sandwich.getImage())
+                .apply(new RequestOptions().transforms(new CenterCrop(), new RoundedCorners(16)))
                 .into(sandwichViewHolder.binding.imageSandwich);
 
         // sandwich name

@@ -64,8 +64,7 @@
                     android:layout_marginBottom="4dp"
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
-                    app:cardCornerRadius="2dp"
-                    app:cardElevation="2dp">
+                    app:cardElevation="1dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -123,8 +122,7 @@
                     android:layout_marginBottom="4dp"
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
-                    app:cardCornerRadius="2dp"
-                    app:cardElevation="2dp">
+                    app:cardElevation="1dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -161,8 +159,7 @@
                     android:layout_marginBottom="4dp"
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
-                    app:cardCornerRadius="2dp"
-                    app:cardElevation="2dp">
+                    app:cardElevation="1dp">
 
                     <LinearLayout
                         android:id="@+id/ingredients"

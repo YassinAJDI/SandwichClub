@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.widget.ArrayAdapter;
 
 import com.udacity.sandwichclub.ui.details.DetailActivity;
@@ -78,9 +79,9 @@ public class MainActivity extends AppCompatActivity {
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null)
+        if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayShowTitleEnabled(false);
-
+        }
     }
 
     private void launchDetailActivity(int position) {
