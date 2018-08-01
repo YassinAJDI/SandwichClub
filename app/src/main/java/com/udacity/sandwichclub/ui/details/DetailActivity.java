@@ -19,11 +19,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.flexbox.FlexboxLayout;
-import com.squareup.picasso.Picasso;
 import com.udacity.sandwichclub.R;
 import com.udacity.sandwichclub.databinding.ActivityDetailBinding;
 import com.udacity.sandwichclub.model.Sandwich;
-import com.udacity.sandwichclub.ui.sandwichlist.SandwichListViewModel;
+import com.udacity.sandwichclub.utils.GlideApp;
 import com.udacity.sandwichclub.utils.UiUtils;
 
 import java.util.List;
@@ -93,9 +92,8 @@ public class DetailActivity extends AppCompatActivity {
 
     private void populateUI(Sandwich sandwich) {
         // Sandwich image
-        Picasso.with(this)
+        GlideApp.with(this)
                 .load(sandwich.getImage())
-                .placeholder(R.color.md_grey_200)
                 .into(mBinding.imageRecipe);
 
         // Sandwich main name

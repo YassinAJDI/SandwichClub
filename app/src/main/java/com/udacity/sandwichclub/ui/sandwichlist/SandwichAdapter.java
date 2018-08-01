@@ -7,10 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.squareup.picasso.Picasso;
 import com.udacity.sandwichclub.R;
 import com.udacity.sandwichclub.databinding.ItemSandwichBinding;
 import com.udacity.sandwichclub.model.Sandwich;
+import com.udacity.sandwichclub.utils.GlideApp;
 
 import java.util.List;
 
@@ -50,9 +50,8 @@ public class SandwichAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         SandwichViewHolder sandwichViewHolder = (SandwichViewHolder) holder;
 
         // sandwich image
-        Picasso.with(mContext)
+        GlideApp.with(mContext)
                 .load(sandwich.getImage())
-                .placeholder(R.color.md_grey_200)
                 .into(sandwichViewHolder.binding.imageSandwich);
 
         // sandwich name
