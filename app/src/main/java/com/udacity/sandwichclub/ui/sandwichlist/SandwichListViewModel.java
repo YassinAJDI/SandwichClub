@@ -11,6 +11,7 @@ import com.udacity.sandwichclub.R;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.utils.AppExecutors;
 import com.udacity.sandwichclub.utils.JsonUtils;
+import com.udacity.sandwichclub.utils.SingleLiveEvent;
 
 import org.json.JSONException;
 
@@ -30,7 +31,7 @@ public class SandwichListViewModel extends AndroidViewModel {
 
     private final MutableLiveData<List<Sandwich>> mObservableSandwiches;
 
-    private final MutableLiveData<Integer> mOpenSandwichEvent = new MutableLiveData<>();
+    private final SingleLiveEvent<Integer> mOpenSandwichEvent = new SingleLiveEvent<>();
 
     public SandwichListViewModel(@NonNull Application application) {
         super(application);
@@ -48,7 +49,6 @@ public class SandwichListViewModel extends AndroidViewModel {
             @Override
             public void run() {
                 Timber.d("Start parsing Json");
-                // TODO: 28/07/2018 add loading indicator
 
                 String[] sandwiches = mContext.getResources().getStringArray(R.array.sandwich_details);
                 for (int i = 0; i < sandwiches.length; i++) {
