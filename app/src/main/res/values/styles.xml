@@ -36,15 +36,13 @@
     </style>
 
     <style name="CardArticleItemText.Headline" parent="TextAppearance.AppCompat.Title">
-        <!--<item name="android:textAppearance">@android:style/TextAppearance</item>-->
-        <!--<item name="fontFamily">@font/rubik_medium</item>-->
+        <item name="fontFamily">@font/raleway_medium</item>
         <item name="android:maxLines">2</item>
     </style>
 
-    <style name="CardArticleItemText.Time" parent="TextAppearance.AppCompat.Caption">
+    <style name="CardArticleItemText.Time" parent="TextAppearance.AppCompat.Body1">
         <item name="android:maxLines">2</item>
-        <!--<item name="fontFamily">@font/rubik</item>-->
-        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/text_black_60</item>
     </style>
 
     <!--Details page-->
