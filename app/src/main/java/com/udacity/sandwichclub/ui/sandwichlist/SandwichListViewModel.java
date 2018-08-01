@@ -51,10 +51,10 @@ public class SandwichListViewModel extends AndroidViewModel {
                 Timber.d("Start parsing Json");
 
                 String[] sandwiches = mContext.getResources().getStringArray(R.array.sandwich_details);
-                for (int i = 0; i < sandwiches.length; i++) {
+                for (String sandwiche : sandwiches) {
                     Sandwich sandwich = null;
                     try {
-                        sandwich = JsonUtils.parseSandwichJson(sandwiches[i]);
+                        sandwich = JsonUtils.parseSandwichJson(sandwiche);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

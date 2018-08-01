@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
-import com.udacity.sandwichclub.R;
 import com.udacity.sandwichclub.databinding.ItemSandwichBinding;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.utils.GlideApp;
@@ -69,7 +68,7 @@ public class SandwichAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             @Override
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();
-                Timber.d("Position clicked: " + position);
+                Timber.d("Position clicked: %s", position);
                 mViewModel.getOpenSandwichEvent().setValue(position);
             }
         });

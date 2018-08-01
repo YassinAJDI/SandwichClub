@@ -1,6 +1,5 @@
 package com.udacity.sandwichclub.utils;
 
-import android.arch.lifecycle.LiveData;
 import android.support.annotation.NonNull;
 
 import com.udacity.sandwichclub.model.Sandwich;

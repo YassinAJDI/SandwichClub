@@ -13,8 +13,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,8 +24,6 @@ import com.udacity.sandwichclub.utils.GlideApp;
 import com.udacity.sandwichclub.utils.UiUtils;
 
 import java.util.List;
-
-import timber.log.Timber;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -56,8 +52,6 @@ public class DetailActivity extends AppCompatActivity {
         setupToolbar();
 
         SandwichViewModel mViewModel = obtainViewModel(this, position);
-
-//        mViewModel.setCurrentPosition(position);
 
         // Subscribe to sandwich changes
         mViewModel.getSandwich().observe(this, new Observer<Sandwich>() {

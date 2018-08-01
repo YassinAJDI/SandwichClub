@@ -20,8 +20,6 @@ public class SandwichViewModel extends AndroidViewModel {
 
     private final Context mContext;
 
-    private AppExecutors mExecutors;
-
     private final MutableLiveData<Sandwich> mSandwich = new MutableLiveData<>();
 
     public SandwichViewModel(@NonNull Application application, final int position) {
@@ -30,7 +28,7 @@ public class SandwichViewModel extends AndroidViewModel {
 
         // initialize data
         mContext = application.getApplicationContext();
-        mExecutors = AppExecutors.getInstance();
+        AppExecutors mExecutors = AppExecutors.getInstance();
 
         // parse json array on background thread
         mExecutors.diskIO().execute(new Runnable() {
@@ -55,11 +53,6 @@ public class SandwichViewModel extends AndroidViewModel {
                 }
             }
         });
-
-    }
-
-    public void setCurrentPosition(final int position) {
-
     }
 
     public LiveData<Sandwich> getSandwich() {

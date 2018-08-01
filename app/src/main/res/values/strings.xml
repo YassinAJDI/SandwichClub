@@ -12,20 +12,6 @@
 
     <!-- Error messages-->
     <string name="detail_error_message">Sandwich data not available</string>
-    <string name="action_search">Search</string>
-
-    <string-array name="sandwich_names">
-        <item>Ham and cheese sandwich</item>
-        <item>Bosna</item>
-        <item>Chivito</item>
-        <item>Club sandwich</item>
-        <item>Gua bao</item>
-        <item>Medianoche</item>
-        <item>Pljeskavica</item>
-        <item>Roujiamo</item>
-        <item>Shawarma</item>
-        <item>Vada Pav</item>
-    </string-array>
 
     <string-array name="sandwich_details">
         <item>{\"name\":{\"mainName\":\"Ham and cheese
