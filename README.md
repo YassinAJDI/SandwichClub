@@ -2,8 +2,7 @@
 # SandwichClub
 
 ## Project Overview:
-Sandwich Club - Project 1, Part of the Android Developer Nanodegree Program by Udacity
-
+Sandwich Club App , created as a part of Udacity Android Developer Nanodegree Program. The application parse Json data using native API.
 ![Screen](https://raw.githubusercontent.com/YassinAJDI/SandwichClub/master/images/mockup.png)
 
 ## Why this Project
