@@ -1,8 +1,10 @@
 
 # SandwichClub
+<a href="https://codeclimate.com/github/YassinAJDI/SandwichClub/maintainability"><img src="https://api.codeclimate.com/v1/badges/d271046c10290f8bca66/maintainability" /></a>
 
-## Project Overview:
 Sandwich Club App , created as a part of Udacity Android Developer Nanodegree Program. The application parse Json data using native API.
+
+## Screenshots:
 ![Screen](https://raw.githubusercontent.com/YassinAJDI/SandwichClub/master/images/mockup.png)
 
 ## Why this Project
